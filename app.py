@@ -28,6 +28,9 @@ def lista_animes():  # put application's code here
     senha = request.form.get('password')
     validacao = data.get(usuario,['ERRO','AUTH'])
 
+    #senha = cryptocode.encrypt("Senha do usuario","wow")--
+
+
     if cryptocode.decrypt(validacao[0], "wow") == senha:
 
         return render_template('Lista.html', dados=[usuario, validacao[0]], lista=lista)
